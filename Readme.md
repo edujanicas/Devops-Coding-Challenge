@@ -8,22 +8,6 @@ This challenge is divided into 2 non-sequential parts, ***Planning*** and ***Exe
 
 Both parts will include detailed instructions on what to do and how to do it.
 
-#### Guidelines
-* ***Create a _git repo_*** and add all your answers and relevant files.
-* Make sure you ***document everything*** and assume nothing.
-* You have ***```4 days```*** to complete this challenge.
-* ***Send us your _git repo_*** as soon as you start working on it, and then let us know when you're done.
-* If you can't finish the challenge due to unforeseen personal reasons let us know ASAP so we can adapt your deadline and/or challenge.
-* Any challenge related questions, technical or otherwise, feel free to contact us: ```challenges (at) unbabel.com```
-
-
-#### What will we look at
-Although we keep processes transparent and straightforward, if we were to provide you with specific answers to this question you'd be come instantly biased by your interpretation of what may or may not want. 
-
-For now let's just say we are super curious about the way people tackle different problems and as we´re also open-minded about it we´ll accept anything and look at everything, as long as it makes sense.
-
-After you've submitted your answers we´ll review them and discuss in detail our conclusions.
-
 ### Context
 
 We're building ***MultiVAC***, a multi-purpose self-adjusting and self-correcting computer that will help us understand how to reverse the universe's entropy.
