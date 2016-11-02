@@ -17,7 +17,11 @@ Processes are first class citizens. Different processes should run on different 
 
 ## Logging
 
-Each machine has a cache with its own logs, that each process writes to stdout. From time to time, this file will be redirected to a central log server, that manages all logs. This connection should be made asynchronously, avoiding to slow down the service when there's to much traffic.
+Each machine has a cache with its own logs, that each process writes to stdout. From time to time, this file will be redirected to a central log server, that manages all logs. This connection should be made asynchronously, avoiding to slow down the service when there's to much traffic. There should be different types of logs:
+  - Critical - Several people should get an email about it;
+  - Error - Email sent every hour;
+  - Warning
+  - Info
 
 ## Monitoring
 
