@@ -25,7 +25,10 @@ Each machine has a cache with its own logs, that each process writes to stdout. 
 
 ## Monitoring
 
-We should monitor our app through the outside and through the inside. Emulate the user and send information to a monitoring machine, and test from inside the private network the connectivity of all machines. Each fail should trigger an event to handle automatically the fail. For example, if an instance stops, it can be terminated and a new one is started to assume it's position.
+We should monitor our app through the outside and through the inside. Emulate the user and send information to a monitoring machine, and test from inside the private network the connectivity of all machines. 
+Each fail should trigger an event to handle automatically the fail. For example, if an instance stops, it can be terminated and a new one is started to assume it's position. 
+  - Every hour an email with this kind of fails should be sent.
+  - Critical machines in down state trigger text menssenges to the people in charge.
 
 ## Automation
 
