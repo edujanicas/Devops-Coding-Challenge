@@ -1,0 +1,7 @@
+---
+- name: Install redis
+  apt: pkg=redis-server state=latest
+
+- name: Start redis-server service
+  service: name=redis-server state=restarted
+  tags: ['redis-restart']

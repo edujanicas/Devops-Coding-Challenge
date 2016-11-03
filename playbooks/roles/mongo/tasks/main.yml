@@ -1,0 +1,7 @@
+---
+- name: Install Mongo
+  apt: name=mongodb update_cache=yes cache_valid_time=3600
+
+- name: Start Mongo service
+  service: name=mongodb state=restarted
+  tags: ['mongo-restart']

@@ -1,19 +1,25 @@
+---
 - name: Configure MultiVAC Server with Flask, Redis and Mongo
   hosts: multivac
-  sudo: True
+  become: Yes
+  roles:
+      - redis
+      - mongo
   vars:
     conf_file: /etc/nginx/sites-available/default
     server_name: ec2-52-213-53-215.eu-west-1.compute.amazonaws.com
   tasks:
     - name: Checkout git repo
       git: repo=https://github.com/Unbabel/devops-coding-challenge.git dest=/home/ubuntu/MultiVAC
-    - name: Install Mongo
-      apt: name=mongodb update_cache=yes cache_valid_time=3600
     - name: Install deps
       pip: requirements=/home/ubuntu/MultiVAC/MultiVAC/requirements.txt
-    - name: Start redis-server service
-      service: name=redis-server state=restarted
     - name: run MultiVAC Server
-      command: /usr/bin/python /home/ubuntu/MultiVAC/MultiVAC/manage.py runserver
+      shell: /usr/bin/python manage.py runserver >> log.txt
+      args:
+        chdir: /home/ubuntu/MultiVAC/MultiVAC/
+        creates: log.txt
     - name: run MultiVAC Server
-      command: /usr/bin/python /home/ubuntu/MultiVAC/MultiVAC/manage.py worker
+      shell: /usr/bin/python manage.py worker >> log.txt
+      args:
+        chdir: /home/ubuntu/MultiVAC/MultiVAC/
+        creates: log.txt
